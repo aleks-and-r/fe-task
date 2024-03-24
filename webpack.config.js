@@ -37,12 +37,8 @@ module.exports = {
     ],
   },
   plugins: [
-    new CopyWebpackPlugin({
-      patterns: [
-        {
-          from: "public",
-        },
-      ],
+    new HtmlWebpackPlugin({
+      template: path.join(__dirname, "public", "index.html"),
     }),
   ],
 };

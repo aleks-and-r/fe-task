@@ -16,7 +16,7 @@ const Details = ({ features, keywords, attachments }) => {
 
   return (
     <InfoCard title={"DETAILS"}>
-      <Box sx={{ padding: "10px" }}>
+      <Box sx={{ padding: "11px" }}>
         <Typography variant="subtitle1" color={theme.palette.primary.secondary}>
           Features
         </Typography>

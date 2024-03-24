@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { Box, Link, TextField, Typography } from "@mui/material";
+import { Box, Link, Typography } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import StarRating from "./StarRating";
 import Button from "./Button";
@@ -70,7 +70,6 @@ const Card = ({
             <Link color={theme.palette.primary.link} href={supplierLink}>
               {supplierName}
             </Link>
-            {/* {supplierName} */}
           </Typography>
           <StarRating rating={rating} />
           <Box>
@@ -96,7 +95,7 @@ const Card = ({
           <span style={{ height: "100%" }} ref={btnRef}>
             <Button
               buttonLabel="Add to cart"
-              icon={<AddIcon />} // Passing the Icon component as the icon
+              icon={<AddIcon />}
               onClick={() => {
                 handleIncrease();
               }}

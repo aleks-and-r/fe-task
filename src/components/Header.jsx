@@ -1,25 +1,25 @@
-import React, { useRef, useEffect } from 'react';
-import AppBar from '@mui/material/AppBar';
-import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
-import IconButton from '@mui/material/IconButton';
-import Badge from '@mui/material/Badge';
-import { useTheme } from '@mui/material/styles';
-import CartIcon from '../icons/CartIcon';
-import FavoriteIcon from '../icons/FavoriteIcon';
-import { Box, Container } from '@mui/material';
-import AddIcon from '../icons/PlusIcon';
-import Button from './Button';
-import { makeStyles } from '@mui/styles';
+import React from "react";
+import AppBar from "@mui/material/AppBar";
+import Toolbar from "@mui/material/Toolbar";
+import Typography from "@mui/material/Typography";
+import IconButton from "@mui/material/IconButton";
+import Badge from "@mui/material/Badge";
+import { makeStyles } from "@mui/styles";
+import { useTheme } from "@mui/material/styles";
+import { Box, Container } from "@mui/material";
+import CartIcon from "../icons/CartIcon";
+import FavoriteIcon from "../icons/FavoriteIcon";
+import AddIcon from "../icons/PlusIcon";
+import Button from "./Button";
 
 const useStyles = makeStyles((theme) => ({
   badge: {
-    animation: '$pop 0.9s ease-in-out forwards',
+    animation: "$pop 0.9s ease-in-out forwards",
   },
-  '@keyframes pop': {
-    '0%': { transform: 'scale(0)' },
-    '50%': { transform: 'scale(2)' },
-    '100%': { transform: 'scale(1)' },
+  "@keyframes pop": {
+    "0%": { transform: "scale(0)" },
+    "50%": { transform: "scale(2)" },
+    "100%": { transform: "scale(1)" },
   },
 }));
 
@@ -35,7 +35,7 @@ const Header = ({
   return (
     <AppBar position="sticky" sx={{ bgcolor: theme.palette.background.paper }}>
       <Container>
-        <Toolbar sx={{ justifyContent: 'space-between' }}>
+        <Toolbar sx={{ justifyContent: "space-between" }}>
           <Typography
             noWrap
             variant="h5"
@@ -45,19 +45,19 @@ const Header = ({
           </Typography>
           <Box
             sx={{
-              display: 'flex',
-              width: 'auto',
-              justifyContent: 'space-between',
+              display: "flex",
+              width: "auto",
+              justifyContent: "space-between",
             }}
           >
             {!isAddToCartButtonVisible ? (
               <Button
                 buttonLabel="Add to cart"
-                icon={<AddIcon />} // Passing the Icon component as the icon
+                icon={<AddIcon />}
                 onClick={handleHeaderAddToCart}
                 color="primary"
                 variant="contained"
-                sx={{ whiteSpace: 'nowrap' }}
+                sx={{ whiteSpace: "nowrap" }}
               />
             ) : null}
 

@@ -1,8 +1,6 @@
-import React from 'react';
-import filledStar from '../../resources/icons/star-filled.svg';
-import star from '../../resources/icons/star.svg';
-import StarFilled from '../icons/StarFilled';
-import StarEmpty from '../icons/Star';
+import React from "react";
+import StarFilled from "../icons/StarFilled";
+import StarEmpty from "../icons/Star";
 
 const Star = ({ filled }) => {
   if (filled) {

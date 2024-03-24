@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
-import Header from './components/Header';
-import { Box, Container, ThemeProvider, createTheme } from '@mui/material';
-import data from '../resources/data/data.json';
-import Typography from '@mui/material/Typography';
-import Details from './components/Details';
-import PricingAndShipping from './components/PricingAndShipping';
-import Card from './components/Card';
-import GlobalStyles from './GlobalStyles';
+import React, { useState } from "react";
+import Header from "./components/Header";
+import { Box, Container, ThemeProvider, createTheme } from "@mui/material";
+import data from "../resources/data/data.json";
+import Typography from "@mui/material/Typography";
+import Details from "./components/Details";
+import PricingAndShipping from "./components/PricingAndShipping";
+import Card from "./components/Card";
+import GlobalStyles from "./GlobalStyles";
 
 const App = () => {
   const [count, setCount] = useState(data.cart.items);
@@ -27,21 +27,21 @@ const App = () => {
   const theme = createTheme({
     palette: {
       primary: {
-        main: '#DE554A',
-        secondary: '#676767',
-        link: '#0000ff',
+        main: "#DE554A",
+        secondary: "#676767",
+        link: "#0000ff",
       },
       background: {
-        default: '#EFEFEF',
-        paper: '#fff',
+        default: "#EFEFEF",
+        paper: "#fff",
       },
       icon: {
-        primary: '#E8E8E8',
-        secondary: '#A7A7A7',
+        primary: "#E8E8E8",
+        secondary: "#A7A7A7",
       },
       chip: {
-        background: '#CED4DA',
-        color: '#fff',
+        background: "#CED4DA",
+        color: "#fff",
       },
     },
   });
@@ -73,10 +73,13 @@ const App = () => {
           onProductAdd={handleProductAdd}
         />
         <Box
-          sx={{ padding: '2rem' }}
+          sx={{ padding: "2rem" }}
           bgcolor={theme.palette.background.default}
         >
-          <Box sx={{ width: '80%' }} bgcolor={theme.palette.background.default}>
+          <Box
+            sx={{ width: { xs: "100%", md: "80%" } }}
+            bgcolor={theme.palette.background.default}
+          >
             <Box>
               <Typography variant="h6" color={theme.palette.primary.main}>
                 DESCRIPTION
@@ -88,11 +91,12 @@ const App = () => {
               </Typography>
               <Box
                 sx={{
-                  display: 'flex',
+                  display: "flex",
                   flexBasis: 1,
-                  width: '100%',
-                  justifyContent: 'space-between',
-                  marginTop: '3rem',
+                  width: "100%",
+                  justifyContent: "space-between",
+                  marginTop: "3rem",
+                  flexDirection: { xs: "column", md: "row" },
                 }}
               >
                 <Details

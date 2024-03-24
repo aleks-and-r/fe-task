@@ -1,12 +1,12 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { Box, Link, TextField, Typography } from '@mui/material';
-import { useTheme } from '@mui/material/styles';
-import StarRating from './StarRating';
-import Button from './Button';
-import AddIcon from '../icons/PlusIcon';
-import NumberInput from './NumberInput';
-import ImageSwitcher from './ImageSwitcher';
-import { useInViewport } from '../hooks/useInViewport';
+import React, { useEffect, useRef, useState } from "react";
+import { Box, Link, TextField, Typography } from "@mui/material";
+import { useTheme } from "@mui/material/styles";
+import StarRating from "./StarRating";
+import Button from "./Button";
+import AddIcon from "../icons/PlusIcon";
+import NumberInput from "./NumberInput";
+import ImageSwitcher from "./ImageSwitcher";
+import { useInViewport } from "../hooks/useInViewport";
 
 const Card = ({
   title,
@@ -22,7 +22,7 @@ const Card = ({
   setAddToCartButtonVisible,
 }) => {
   const theme = useTheme();
-  const [inputValue, setInputValue] = useState('');
+  const [inputValue, setInputValue] = useState("");
   const btnRef = useRef();
   const { isVisible } = useInViewport(btnRef);
 
@@ -34,24 +34,28 @@ const Card = ({
     const parsedNumber = parseInt(inputValue);
     if (!isNaN(parsedNumber) && parsedNumber > 0) {
       setCount((prevCount) => prevCount + parsedNumber);
-      setInputValue('');
+      setInputValue("");
     }
   };
 
   return (
     <Box
       bgcolor={theme.palette.background.paper}
-      sx={{ display: 'flex', p: '2rem' }}
+      sx={{
+        display: "flex",
+        p: "2rem",
+        flexDirection: { xs: "column", md: "row" },
+      }}
     >
       <ImageSwitcher images={images} />
       {/* description */}
       <Box
         sx={{
-          pl: 5,
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'space-between',
-          width: '40%',
+          pl: { xs: 0, md: 5 },
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "space-between",
+          width: { xs: "100%", md: "40%" },
         }}
       >
         <Box>
@@ -83,13 +87,13 @@ const Card = ({
         </Box>
         <Box
           sx={{
-            display: 'flex',
-            alignItems: 'center',
+            display: "flex",
+            alignItems: "center",
           }}
         >
           <NumberInput value={inputValue} onChange={setInputValue} />
-          <Typography sx={{ ml: '10px', mr: '10px' }}>{unit}</Typography>
-          <span style={{ height: '100%' }} ref={btnRef}>
+          <Typography sx={{ ml: "10px", mr: "10px" }}>{unit}</Typography>
+          <span style={{ height: "100%" }} ref={btnRef}>
             <Button
               buttonLabel="Add to cart"
               icon={<AddIcon />} // Passing the Icon component as the icon
@@ -99,7 +103,7 @@ const Card = ({
               color="primary"
               variant="contained"
               disabled={!Boolean(inputValue)}
-              sx={{ height: '100%', whiteSpace: 'nowrap' }}
+              sx={{ height: "100%", whiteSpace: "nowrap" }}
             />
           </span>
         </Box>

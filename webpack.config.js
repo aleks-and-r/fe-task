@@ -37,18 +37,18 @@ module.exports = {
     ],
   },
   plugins: [
-    new HtmlWebpackPlugin({
-      template: path.join(__dirname, "public", "index.html"),
-    }),
-    // new CopyWebpackPlugin({
-    //   patterns: [
-    //     {
-    //       from: "public",
-    //       globOptions: {
-    //         ignore: ["index.html"],
-    //       },
-    //     },
-    //   ],
+    // new HtmlWebpackPlugin({
+    //   template: path.join(__dirname, "public", "index.html"),
     // }),
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: "public",
+          globOptions: {
+            ignore: ["index.html"],
+          },
+        },
+      ],
+    }),
   ],
 };
